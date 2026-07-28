@@ -8,12 +8,19 @@ public class sumOfFirstnNaturalNumber {
         System.out.print("Enter the value of n: ");
         int n = sc.nextInt(); // Read the value of n from the user
         int sum = 0;
+       int result= printsumOfFirstnNaturalNumber(n,sum); // Call the method to print the sum
+       System.out.println("Sum of first " + n + " natural numbers is: " + result);
+    }
 
-        for (int i = 1; i <= n; i++) {
-            sum += i; // Add the current number to the sum
-        }
+    public static int printsumOfFirstnNaturalNumber(int n,int sum) {
+        if(n == 0) {
+          return sum;
+       }
+        sum += n;
+      return printsumOfFirstnNaturalNumber(n-1, sum);
 
-        System.out.println("Sum of first " + n + " natural numbers is: " + sum);
+        
     }
 
 }
+
